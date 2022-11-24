@@ -1,0 +1,25 @@
+{
+  "user": [
+    {
+      "name": "Manoj",
+      "address": "Karve nagar,Latur",
+      "email": "manoj345@yopmail.com",
+      "contact": "9130935395",
+      "id": 1
+    },
+    {
+      "name": "manisha",
+      "address": "Latur,Maharshtra,India",
+      "email": "manoj345@yopmail.com",
+      "contact": "3432432423",
+      "id": 2
+    },
+    {
+      "name": "sumit",
+      "address": "Latur,Maharshtra,India",
+      "email": "manoj6767@yopmail.com",
+      "contact": "314232423242",
+      "id": 3
+    }
+  ]
+}
