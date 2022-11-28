@@ -1,7 +1,9 @@
 import * as types from './actionType'
 import axios from  'axios'
 
-const getUsers = (users) =>({
+//all action types with payload
+
+const getUsers = (users) =>({  
     type : types.GET_USERS,
     payload : users
 })
@@ -24,6 +26,7 @@ const userUpdated = () =>({
     type : types.UPDATE_USER
 })
 
+//Dashboard all users list
 
 export const loadUsers = () =>{
     return function(dispatch){
@@ -35,6 +38,8 @@ export const loadUsers = () =>{
         })
     }
 }
+
+//delete selected user
 
 export const deleteuser = (id) =>{
     return function(dispatch){
@@ -48,8 +53,12 @@ export const deleteuser = (id) =>{
     }
 }
 
+//add new user
+
 export const addUser = (user) =>{
-    return function(dispatch){
+    console.log("=======",user)
+    return (dispatch) =>{
+        console.log('USER---->',user);
         axios.post(`${process.env.REACT_APP_API}`,user).then((res) =>{
             console.log("+++++++++++++++",res.data)
             dispatch(userAdded())
@@ -58,6 +67,8 @@ export const addUser = (user) =>{
         })
     }
 }
+
+//fetching single using id
 
 export const getSingleUser = (id) =>{
     return function(dispatch){
@@ -69,6 +80,8 @@ export const getSingleUser = (id) =>{
         })
     }
 }
+ 
+//update user
 
 export const updateUser = (id,user) =>{
     return function(dispatch){
