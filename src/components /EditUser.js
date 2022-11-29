@@ -18,7 +18,7 @@ export default function EditUser() {
 
     let dispatch = useDispatch()
     let navigate = useNavigate()
-    let { id } = useParams()
+    let { id } = useParams() 
     const { user } = useSelector((state) => state.data)
     const [state, setState] = useState({
         name: "",

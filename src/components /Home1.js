@@ -24,7 +24,7 @@ class Home1 extends Component {
         this.props.loadUsers();
     }
 
-    handleDelete = (el) => {
+    handleDelete = (el) => { 
         console.log("++++++++++++++++el", el.id)
         this.props.deleteUser(el.id)
     }

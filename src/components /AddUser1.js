@@ -44,7 +44,7 @@ class AddUser1 extends Component {
             eRegex: /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/,
             mobRegex: /^[6789]\d{9}$/
         }
-
+ 
         e.preventDefault()
         this.setState({ ...this.state, navigate: true })
         if (this.state.name === "" || !regex.fRegex.test(this.state.name)) {

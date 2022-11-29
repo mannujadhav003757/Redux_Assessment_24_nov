@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import rootReducer from '../redux/root-reducer';
 import { loadUsers } from '../redux/action';
 
-class Home2 extends Component {
+class Home2 extends Component { 
     constructor(props) {
         componentDidMount=()=>{
             this.props.loadUsers();
