@@ -5,6 +5,15 @@ import rootReducer from '../redux/root-reducer';
 import { loadUsers } from '../redux/action';
 
 class Home2 extends Component {
+    constructor(props) {
+        componentDidMount=()=>{
+            this.props.loadUsers();
+        }    
+       
+    }
+
+
+   
   render() {
     return (
       <div>Home2</div>

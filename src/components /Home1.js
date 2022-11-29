@@ -35,7 +35,7 @@ class Home1 extends Component {
         return (
             <>
                 <div className="App">
-                    <Button variant="primary" size="lg" className="col-sm-5 mt-4 mb-4" onClick={()=>{window.open('/addUser')}}>
+                    <Button variant="primary" size="lg" className="col-sm-5 mt-4 mb-4" onClick={()=>{window.location.assign('/addUser')}}>
                         Add New User
                     </Button>
                 </div>

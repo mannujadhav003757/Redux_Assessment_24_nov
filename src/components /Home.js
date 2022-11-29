@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 import { deleteuser, loadUsers } from '../redux/action';
 import usersReducers from '../redux/reducer';
 import { Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -56,27 +56,27 @@ const rows = [
 export default function Home() {
 
     let dispatch = useDispatch()
-    const [user, setUser] = useState()
-    const { users } = useSelector(state => state.data)
+    const [user,setUser] = useState()
+    const { users } = useSelector( state => state.data)
     let navigate = useNavigate()
 
     //Getting users list
-    useEffect(() => {
+  useEffect(() => {
         dispatch(loadUsers())
     }, [])
 
     //Delete single user
-    const handleDelete = (id) => {
-        if (window.confirm("Are you sure You want to delete this user...!!")) {
+    const handleDelete = (id) =>{
+        if(window.confirm("Are you sure You want to delete this user...!!")){
             dispatch(deleteuser(id))
             dispatch(loadUsers())
         }
-        //document.location.reload();
+            //document.location.reload();
     }
 
     return (
         <div className='App'>
-            <Button variant="warning" size="lg" className='mt-4 mb-4' onClick={() => navigate("./addUser")}>Add New User</Button>
+            <Button variant="warning" size="lg" className='mt-4 mb-4' onClick={()=> navigate("./addUser")}>Add New User</Button>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
                     <TableHead>
@@ -98,9 +98,9 @@ export default function Home() {
                                 <StyledTableCell align="center">{el.contact}</StyledTableCell>
                                 <StyledTableCell align="center">{el.address}</StyledTableCell>
                                 <StyledTableCell align="center">
-                                    <Button variant="primary" size="sm" onClick={() => navigate(`/editUser/${el.id}`)}>UPDATE</Button>
-                                    {/* &nbsp;&nbsp;&nbsp; */}
-                                    <Button variant="danger" size="sm" style={{ marginLeft: "10px" }} onClick={() => handleDelete(el.id)}>DELETE</Button>
+                                <Button variant="primary" size="sm" onClick={() => navigate(`/editUser/${el.id}`)}>UPDATE</Button>
+                                {/* &nbsp;&nbsp;&nbsp; */}
+                                <Button variant="danger" size="sm" style={{marginLeft:"10px"}} onClick={() => handleDelete(el.id)}>DELETE</Button>
                                 </StyledTableCell>
                             </StyledTableRow>
                         ))}
